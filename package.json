@@ -38,7 +38,8 @@
     "@stdlib/random-base-arcsine": "^0.0.6",
     "@stdlib/strided-base-binary": "^0.0.8",
     "@stdlib/strided-base-nullary": "^0.0.7",
-    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7"
+    "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7",
+    "@stdlib/error-tools-fmtprodmsg": "^0.0.x"
   },
   "devDependencies": {
     "@stdlib/array-base-zero-to": "^0.0.6",
