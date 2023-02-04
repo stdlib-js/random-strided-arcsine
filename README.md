@@ -24,38 +24,30 @@ limitations under the License.
 
 > Fill a strided array with [arcsine][@stdlib/random/base/arcsine] distributed pseudorandom numbers.
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/random-strided-arcsine
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm` branch][esm-url].
+-   If you are using Deno, visit the [`deno` branch][deno-url].
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd` branch][umd-url].
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-arcsine = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-arcsine@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var arcsine = require( 'path/to/vendor/umd/random-strided-arcsine/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-arcsine@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.arcsine;
-})();
-</script>
+var arcsine = require( '@stdlib/random-strided-arcsine' );
 ```
 
 #### arcsine( N, a, sa, b, sb, out, so\[, options] )
@@ -82,14 +74,12 @@ The function has the following parameters:
 -   **out**: output array.
 -   **so**: index increment for `out`.
 
-The `N` and stride parameters determine which strided array elements are accessed at runtime. For example, to access every other value in `a` and the first `N` elements of `b`,
+The `N` and stride parameters determine which strided array elements are accessed at runtime. For example, to access every other value in `out`,
 
 ```javascript
-var a = [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ];
-var b = [ 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ];
 var out = [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ];
 
-arcsine( 3, a, -2, b, 1, out, 1 );
+arcsine( 3, [ 0.0 ], 0, [ 1.0 ], 0, out, 2 );
 ```
 
 Note that indexing is relative to the first index. To introduce an offset, use [`typed array`][mdn-typed-array] views.
@@ -100,8 +90,8 @@ Note that indexing is relative to the first index. To introduce an offset, use [
 var Float64Array = require( '@stdlib/array-float64' );
 
 // Initial arrays...
-var a0 = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
-var b0 = new Float64Array( [ 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
+var a0 = new Float64Array( [ 0.0, 0.0, 0.0, 2.0, 2.0, 2.0 ] );
+var b0 = new Float64Array( [ 5.0, 5.0, 5.0, 5.0, 5.0, 5.0 ] );
 
 // Create offset views...
 var a1 = new Float64Array( a0.buffer, a0.BYTES_PER_ELEMENT*1 ); // start at 2nd element
@@ -168,16 +158,12 @@ The function has the following additional parameters:
 -   **ob**: starting index for `b`.
 -   **oo**: starting index for `out`.
 
-While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the offset parameters support indexing semantics based on starting indices. For example, to access every other value in `a` starting from the second value and the last `N` elements in `b`,
+While [`typed array`][mdn-typed-array] views mandate a view offset based on the underlying `buffer`, the offset parameters support indexing semantics based on starting indices. For example, to access every other value in `out` starting from the second value,
 
 ```javascript
-var Float64Array = require( '@stdlib/array-float64' );
+var out = [ 0.0, 0.0, 0.0, 0.0, 0.0, 0.0 ];
 
-var a = new Float64Array( [ 1.0, 2.0, 3.0, 4.0, 5.0, 6.0 ] );
-var b = new Float64Array( [ 7.0, 8.0, 9.0, 10.0, 11.0, 12.0 ] );
-
-var out = new Float64Array( 3 );
-arcsine.ndarray( out.length, a, 2, 1, b, -1, b.length-1, out, 1, 0 );
+arcsine.ndarray( 3, [ 0.0 ], 0, 0, [ 1.0 ], 0, 0, out, 2, 1 );
 ```
 
 The function accepts the same `options` as documented above for `arcsine()`.
@@ -203,16 +189,11 @@ The function accepts the same `options` as documented above for `arcsine()`.
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-zeros@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/array-base-zero-to@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/console-log-each@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/random-strided-arcsine@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var zeros = require( '@stdlib/array-zeros' );
+var zeroTo = require( '@stdlib/array-base-zero-to' );
+var logEach = require( '@stdlib/console-log-each' );
+var arcsine = require( '@stdlib/random-strided-arcsine' );
 
 // Specify a PRNG seed:
 var opts = {
@@ -236,11 +217,6 @@ arcsine( x2.length, [ 0.0 ], 0, [ 1.0 ], 0, x2, 1, opts );
 
 // Print the array contents:
 logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
@@ -326,9 +302,9 @@ Copyright &copy; 2016-2023. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/random/base/arcsine]: https://github.com/stdlib-js/random-base-arcsine/tree/umd
+[@stdlib/random/base/arcsine]: https://github.com/stdlib-js/random-base-arcsine
 
-[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32/tree/umd
+[@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 </section>
 
