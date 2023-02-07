@@ -37,6 +37,7 @@
     "url": "https://github.com/stdlib-js/stdlib/issues"
   },
   "dependencies": {
+    "@stdlib/array-base-assert-is-accessor-array": "^0.0.1",
     "@stdlib/random-base-arcsine": "^0.0.6",
     "@stdlib/strided-base-binary": "^0.0.8",
     "@stdlib/strided-base-nullary": "^0.0.7",
@@ -44,14 +45,19 @@
     "@stdlib/utils-define-nonenumerable-read-only-property": "^0.0.7"
   },
   "devDependencies": {
+    "@stdlib/array-base-linspace": "^0.0.3",
+    "@stdlib/array-base-to-accessor-array": "^null",
     "@stdlib/array-base-zero-to": "^0.0.6",
     "@stdlib/array-filled": "^0.0.6",
+    "@stdlib/array-filled-by": "^0.0.2",
+    "@stdlib/array-float64": "^0.0.6",
     "@stdlib/array-zeros": "^0.0.1",
     "@stdlib/bench": "^0.0.12",
-    "@stdlib/console-log-each": "^0.0.1",
+    "@stdlib/console-log-each": "^0.0.2",
     "@stdlib/math-base-assert-is-nan": "^0.0.8",
     "@stdlib/math-base-assert-is-nanf": "^0.0.8",
     "@stdlib/math-base-special-pow": "^0.0.7",
+    "@stdlib/random-base-uniform": "^0.0.6",
     "tape": "git+https://github.com/kgryte/tape.git#fix/globby",
     "istanbul": "^0.4.1",
     "tap-min": "git+https://github.com/Planeshifter/tap-min.git"
