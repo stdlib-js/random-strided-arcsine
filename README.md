@@ -22,7 +22,7 @@ limitations under the License.
 
 [![NPM version][npm-image]][npm-url] [![Build Status][test-image]][test-url] [![Coverage Status][coverage-image]][coverage-url] <!-- [![dependencies][dependencies-image]][dependencies-url] -->
 
-> Fill a strided array with [arcsine][@stdlib/random/base/arcsine] distributed pseudorandom numbers.
+> Fill a strided array with pseudorandom numbers drawn from an [arcsine][@stdlib/random/base/arcsine] distribution.
 
 <section class="installation">
 
@@ -52,7 +52,7 @@ var arcsine = require( '@stdlib/random-strided-arcsine' );
 
 #### arcsine( N, a, sa, b, sb, out, so\[, options] )
 
-Fills a strided array with [arcsine][@stdlib/random/base/arcsine] distributed pseudorandom numbers.
+Fills a strided array with pseudorandom numbers drawn from an [arcsine][@stdlib/random/base/arcsine] distribution.
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
@@ -140,7 +140,7 @@ arcsine( out.length, [ 2.0 ], 0, [ 5.0 ], 0, out, 1, opts );
 
 #### arcsine.ndarray( N, a, sa, oa, b, sb, ob, out, so, oo\[, options] )
 
-Fills a strided array with [arcsine][@stdlib/random/base/arcsine] distributed pseudorandom numbers using alternative indexing semantics.
+Fills a strided array with pseudorandom numbers drawn from an [arcsine][@stdlib/random/base/arcsine] distribution using alternative indexing semantics.
 
 ```javascript
 var Float64Array = require( '@stdlib/array-float64' );
