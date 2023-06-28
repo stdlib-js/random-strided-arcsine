@@ -46,7 +46,7 @@
   },
   "devDependencies": {
     "@stdlib/array-base-linspace": "^0.0.3",
-    "@stdlib/array-base-to-accessor-array": "^null",
+    "@stdlib/array-base-to-accessor-array": "^0.0.1",
     "@stdlib/array-base-zero-to": "^0.0.6",
     "@stdlib/array-filled": "^0.0.6",
     "@stdlib/array-filled-by": "^0.0.2",
