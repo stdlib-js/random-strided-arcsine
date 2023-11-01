@@ -50,7 +50,7 @@
     "@stdlib/array-base-zero-to": "^0.1.0",
     "@stdlib/array-filled": "^0.1.0",
     "@stdlib/array-filled-by": "^0.1.0",
-    "@stdlib/array-float64": "^0.1.0",
+    "@stdlib/array-float64": "^0.1.1",
     "@stdlib/array-zeros": "^0.1.0",
     "@stdlib/bench": "^0.1.0",
     "@stdlib/console-log-each": "^0.1.0",
