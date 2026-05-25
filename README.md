@@ -244,6 +244,7 @@ logEach( 'x1[%d] = %.2f; x2[%d] = %.2f', idx, x1, idx, x2 );
 
 ## See Also
 
+-   <span class="package-name">[`@stdlib/random-arcsine`][@stdlib/random/arcsine]</span><span class="delimiter">: </span><span class="description">generate pseudorandom numbers drawn from an arcsine distribution.</span>
 -   <span class="package-name">[`@stdlib/random-base/arcsine`][@stdlib/random/base/arcsine]</span><span class="delimiter">: </span><span class="description">arcsine distributed pseudorandom numbers.</span>
 -   <span class="package-name">[`@stdlib/random-array/arcsine`][@stdlib/random/array/arcsine]</span><span class="delimiter">: </span><span class="description">create an array containing pseudorandom numbers drawn from an arcsine distribution.</span>
 
@@ -330,6 +331,8 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 [@stdlib/array/uint32]: https://github.com/stdlib-js/array-uint32
 
 <!-- <related-links> -->
+
+[@stdlib/random/arcsine]: https://github.com/stdlib-js/random-arcsine
 
 [@stdlib/random/array/arcsine]: https://github.com/stdlib-js/random-array-arcsine
 
